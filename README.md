@@ -1,8 +1,8 @@
 # Zabbix templates
 
-zbx_3.0 templates are tested with Zabbix 3.0
-zbx_3.4 template is edited to use with Zabbix 3.4
-ZBX_4.4 template is edited to use with Zabbix 4.4
+zbx_3.0 templates are tested with Zabbix 3.0<br/>
+zbx_3.4 template is edited to use with Zabbix 3.4<br/>
+ZBX_4.4 template is edited to use with Zabbix 4.4<br/>
 
 # What is included in the template:
 - LLD discovery of Fans

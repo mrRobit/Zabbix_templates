@@ -18,14 +18,8 @@ Create a NGFW host and link this template to it.
 
 ## Zabbix configuration
 
-Set/change the SNMP community in the template macros to match your community string. See [Templates macros](https://www.zabbix.com/documentation/current/manual/config/templates/template#creating_a_template)
-Set SNMP community on the NGFW and commit. See [Enable SNMP Monitoring] (https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-web-interface-help/device/device-setup-operations/enable-snmp-monitoring.html)
-
-### Macros used
-
-|Name|Description|Default|
-|----|-----------|-------|
-|{$PAN.NGFW.SNMP} |<p>NGFW SNMP community value</p> |`CHANGE_IF_NEEDED` |
+- Set/change the SNMP community in the host SNMP settings to match your community string. See [CONFIGURING SNMP MONITORING](https://www.zabbix.com/documentation/current/manual/config/items/itemtypes/snmp#configuring_snmp_monitoring)
+- Set SNMP community on the NGFW and commit. See [Enable SNMP Monitoring] (https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-web-interface-help/device/device-setup-operations/enable-snmp-monitoring.html)
 
 ## Template links
 

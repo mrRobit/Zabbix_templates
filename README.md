@@ -9,6 +9,8 @@ This template was tested on:
 
 - PAN-OS, version 9.1
 - PAN-OS, version 10.0
+- PAN-OS, version 10.1
+- PAN-OS, version 10.2
 
 ## Setup
 

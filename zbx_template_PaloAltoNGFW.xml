@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-    <version>5.2</version>
-    <date>2021-01-27T11:19:42Z</date>
+    <version>5.4</version>
+    <date>2022-11-13T20:33:42Z</date>
     <groups>
         <group>
+            <uuid>7df96b18c230490a9a0a9e2307226338</uuid>
             <name>Templates</name>
         </group>
     </groups>
     <templates>
         <template>
+            <uuid>b8c9c61f2aa9496084edea293b792b9f</uuid>
             <template>Template Palo Alto Firewall</template>
             <name>Template Palo Alto Firewall</name>
-            <templates>
-                <template>
-                    <name>Template Module Interfaces SNMPv2</name>
-                </template>
-            </templates>
             <groups>
                 <group>
                     <name>Templates</name>
@@ -23,6 +20,7 @@
             </groups>
             <items>
                 <item>
+                    <uuid>a1ab5a14371940148deec735738f05fa</uuid>
                     <name>Processor 1 Load (mgmt)</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.2.1.25.3.3.1.2.1</snmp_oid>
@@ -33,13 +31,15 @@
                     <request_method>POST</request_method>
                     <triggers>
                         <trigger>
-                            <expression>{min(15m)}&gt;95</expression>
+                            <uuid>95a6bd8630fa456a9561750cbe1654e4</uuid>
+                            <expression>min(/Template Palo Alto Firewall/hrProcessorLoad1,15m)&gt;95</expression>
                             <name>CPU utilization (MP) on {HOST.HOST} is over 95% for 15 min</name>
                             <priority>AVERAGE</priority>
                         </trigger>
                     </triggers>
                 </item>
                 <item>
+                    <uuid>a3a5a2fcd47445ed8c35975142d61033</uuid>
                     <name>Processor 2 Load (data)</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.2.1.25.3.3.1.2.2</snmp_oid>
@@ -50,13 +50,15 @@
                     <request_method>POST</request_method>
                     <triggers>
                         <trigger>
-                            <expression>{min(15m)}&gt;95</expression>
+                            <uuid>0894b9b8b4854aa2ab27cd47ff9c553e</uuid>
+                            <expression>min(/Template Palo Alto Firewall/hrProcessorLoad2,15m)&gt;95</expression>
                             <name>CPU utilization (DP) on {HOST.HOST} is over 95% for 15 min</name>
                             <priority>AVERAGE</priority>
                         </trigger>
                     </triggers>
                 </item>
                 <item>
+                    <uuid>308390b1b273407c86b864d0673dc60f</uuid>
                     <name>ICMP Check</name>
                     <type>SIMPLE</type>
                     <key>icmpping[,2]</key>
@@ -76,13 +78,15 @@
                     <request_method>POST</request_method>
                     <triggers>
                         <trigger>
-                            <expression>{last(#1)}=0 and {last(#2)}=0</expression>
+                            <uuid>709b3fb1eef14529ab27b1f31107bc43</uuid>
+                            <expression>last(/Template Palo Alto Firewall/icmpping[,2],#1)=0 and last(/Template Palo Alto Firewall/icmpping[,2],#2)=0</expression>
                             <name>{HOST.HOST} is down!</name>
                             <priority>HIGH</priority>
                         </trigger>
                     </triggers>
                 </item>
                 <item>
+                    <uuid>c90f30c8cb8c4d83ba2c6423e7912801</uuid>
                     <name>Chassis type</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.25461.2.1.2.2.1.0</snmp_oid>
@@ -96,6 +100,7 @@
                     <request_method>POST</request_method>
                 </item>
                 <item>
+                    <uuid>e2d110b53e054707838ad9217f2744e8</uuid>
                     <name>GP active tunnels</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.25461.2.1.2.5.1.3.0</snmp_oid>
@@ -104,6 +109,7 @@
                     <description>Number of active tunnels.</description>
                 </item>
                 <item>
+                    <uuid>f200143e6e9b40658b65e979fd25329a</uuid>
                     <name>GP tunnels supported</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.25461.2.1.2.5.1.2.0</snmp_oid>
@@ -114,6 +120,7 @@
                     <description>Max tunnels allowed.</description>
                 </item>
                 <item>
+                    <uuid>1e314d43713f477da1c6c6c4f454b224</uuid>
                     <name>GP gateway utilization</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.25461.2.1.2.5.1.1.0</snmp_oid>
@@ -123,7 +130,8 @@
                     <description>GlobalProtect Gateway utilization percentage.</description>
                     <triggers>
                         <trigger>
-                            <expression>{min(15m)}&gt;95</expression>
+                            <uuid>da544f9bc3a848aba438047dde8fe21d</uuid>
+                            <expression>min(/Template Palo Alto Firewall/panGPGWUtilizationPct,15m)&gt;95</expression>
                             <name>High GlobalProtect utilization (&gt;95%) for 15m</name>
                             <priority>AVERAGE</priority>
                             <description>Hitting GP limits for 15  minutes</description>
@@ -131,6 +139,7 @@
                     </triggers>
                 </item>
                 <item>
+                    <uuid>17d6ff3560f54dfca8cec846dc57c206</uuid>
                     <name>Total active sessions</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.25461.2.1.2.3.3.0</snmp_oid>
@@ -140,6 +149,7 @@
                     <request_method>POST</request_method>
                 </item>
                 <item>
+                    <uuid>63f7cd5c863c4a9b9f6d2aaa30e43964</uuid>
                     <name>Total active ICMP sessions</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.25461.2.1.2.3.6.0</snmp_oid>
@@ -148,6 +158,7 @@
                     <description>Total number of active ICMP sessions.</description>
                 </item>
                 <item>
+                    <uuid>9ef0798e5f4a45d48e919804c31dfa99</uuid>
                     <name>Total active TCP sessions</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.25461.2.1.2.3.4.0</snmp_oid>
@@ -156,6 +167,7 @@
                     <description>Total number of active TCP sessions.</description>
                 </item>
                 <item>
+                    <uuid>b362cdbb7a9a4d32acdef7b36ca49a52</uuid>
                     <name>Total active UDP sessions</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.25461.2.1.2.3.5.0</snmp_oid>
@@ -164,6 +176,7 @@
                     <description>Total number of active UDP sessions.</description>
                 </item>
                 <item>
+                    <uuid>7a46b72b7b9043e7b5adb2aa8401edeb</uuid>
                     <name>Total supported sessions</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.25461.2.1.2.3.2.0</snmp_oid>
@@ -175,6 +188,7 @@
                     <request_method>POST</request_method>
                 </item>
                 <item>
+                    <uuid>28a534703c6049d0abfa8622cabfac72</uuid>
                     <name>Session table utilization</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.25461.2.1.2.3.1.0</snmp_oid>
@@ -184,7 +198,8 @@
                     <description>Session table utilization percentage. Values should be between 0 and 100.</description>
                     <triggers>
                         <trigger>
-                            <expression>{min(15m)}&gt;90</expression>
+                            <uuid>1c55fd38643b4a40a890806903974e22</uuid>
+                            <expression>min(/Template Palo Alto Firewall/panSessionUtilization,15m)&gt;90</expression>
                             <name>High session table utilization (&gt;90%) for 15m</name>
                             <priority>HIGH</priority>
                             <description>Reaching session table capacity</description>
@@ -193,6 +208,7 @@
                     </triggers>
                 </item>
                 <item>
+                    <uuid>7a7d7c2950014f599a59d6d7e286b710</uuid>
                     <name>App-ID content date</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.25461.2.1.2.1.20.0</snmp_oid>
@@ -204,6 +220,7 @@
                     <description>Currently installed application definition release date. If no release date is found, unknown is returned.</description>
                 </item>
                 <item>
+                    <uuid>e6c666169589415e9c1a3f9072e1b505</uuid>
                     <name>App-ID Version</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.25461.2.1.2.1.7.0</snmp_oid>
@@ -216,7 +233,8 @@
                     <request_method>POST</request_method>
                     <triggers>
                         <trigger>
-                            <expression>{diff(0)}=1</expression>
+                            <uuid>394584e124f6433bb41cbbd867348144</uuid>
+                            <expression>(last(/Template Palo Alto Firewall/panSysAppVersion,#1)&lt;&gt;last(/Template Palo Alto Firewall/panSysAppVersion,#2))=1</expression>
                             <name>App-ID version has changed to {ITEM.VALUE1}</name>
                             <priority>INFO</priority>
                             <manual_close>YES</manual_close>
@@ -224,6 +242,7 @@
                     </triggers>
                 </item>
                 <item>
+                    <uuid>1991875df7f54cc5b60c2a34e9676c77</uuid>
                     <name>Global Protect Client Version</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.25461.2.1.2.1.15.0</snmp_oid>
@@ -236,7 +255,8 @@
                     <request_method>POST</request_method>
                     <triggers>
                         <trigger>
-                            <expression>{diff(0)}=1</expression>
+                            <uuid>211061de1d274109820af7f1e27ab337</uuid>
+                            <expression>(last(/Template Palo Alto Firewall/panSysGlobalProtectClientVersion,#1)&lt;&gt;last(/Template Palo Alto Firewall/panSysGlobalProtectClientVersion,#2))=1</expression>
                             <name>Global Protect Client Version has changed to {ITEM.VALUE}</name>
                             <priority>INFO</priority>
                             <manual_close>YES</manual_close>
@@ -244,6 +264,7 @@
                     </triggers>
                 </item>
                 <item>
+                    <uuid>95e8c17e18b04f97b7d41f5d7caa8128</uuid>
                     <name>HA Mode</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.25461.2.1.2.1.13.0</snmp_oid>
@@ -256,6 +277,7 @@
                     <request_method>POST</request_method>
                 </item>
                 <item>
+                    <uuid>fbeb733e9a224df8a65edd6a35e5a13d</uuid>
                     <name>HA Peer State</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.25461.2.1.2.1.12.0</snmp_oid>
@@ -267,6 +289,7 @@
                     <request_method>POST</request_method>
                 </item>
                 <item>
+                    <uuid>69c101bad9d74bfc83d33e590e2e2dd2</uuid>
                     <name>HA State</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.25461.2.1.2.1.11.0</snmp_oid>
@@ -278,7 +301,8 @@
                     <request_method>POST</request_method>
                     <triggers>
                         <trigger>
-                            <expression>{diff(0)}=1</expression>
+                            <uuid>937c5fe5976a42c6bfc06ce7add11211</uuid>
+                            <expression>(last(/Template Palo Alto Firewall/panSysHAState,#1)&lt;&gt;last(/Template Palo Alto Firewall/panSysHAState,#2))=1</expression>
                             <name>{HOST.HOST} switched to {ITEM.VALUE} state in HA cluster</name>
                             <priority>AVERAGE</priority>
                             <manual_close>YES</manual_close>
@@ -286,6 +310,7 @@
                     </triggers>
                 </item>
                 <item>
+                    <uuid>3886ca9c88b54b808676631eabd76a06</uuid>
                     <name>HW Version</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.25461.2.1.2.1.2.0</snmp_oid>
@@ -299,6 +324,7 @@
                     <request_method>POST</request_method>
                 </item>
                 <item>
+                    <uuid>6ddb1ff37b0e4ff890ee4d4ee900ee0f</uuid>
                     <name>Serial Number</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.25461.2.1.2.1.3.0</snmp_oid>
@@ -312,7 +338,8 @@
                     <request_method>POST</request_method>
                     <triggers>
                         <trigger>
-                            <expression>{diff(0)}=1 and {strlen()}&gt;0</expression>
+                            <uuid>37187e18b830450ab673440df4e982c3</uuid>
+                            <expression>(last(/Template Palo Alto Firewall/panSysSerialNumber,#1)&lt;&gt;last(/Template Palo Alto Firewall/panSysSerialNumber,#2))=1 and length(last(/Template Palo Alto Firewall/panSysSerialNumber))&gt;0</expression>
                             <name>Device has been replaced (new serial number received)</name>
                             <priority>INFO</priority>
                             <description>Last value: {ITEM.LASTVALUE1}.
@@ -322,6 +349,7 @@ Device serial number has changed. Ack to close</description>
                     </triggers>
                 </item>
                 <item>
+                    <uuid>69ce7e2a81e349f9b0bee1773a1dca08</uuid>
                     <name>PAN-OS Version</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.25461.2.1.2.1.1.0</snmp_oid>
@@ -335,7 +363,8 @@ Device serial number has changed. Ack to close</description>
                     <request_method>POST</request_method>
                     <triggers>
                         <trigger>
-                            <expression>{diff(0)}=1</expression>
+                            <uuid>1758114fdda2498b9c252ae8bc8b6cbb</uuid>
+                            <expression>(last(/Template Palo Alto Firewall/panSysSwVersion,#1)&lt;&gt;last(/Template Palo Alto Firewall/panSysSwVersion,#2))=1</expression>
                             <name>PAN-OS version has changed to {ITEM.VALUE}</name>
                             <priority>INFO</priority>
                             <description>Operating system on a PA firewall has been upgraded or downgraded</description>
@@ -344,6 +373,7 @@ Device serial number has changed. Ack to close</description>
                     </triggers>
                 </item>
                 <item>
+                    <uuid>51dc53b9aae74fffb5a3af3ac0540a76</uuid>
                     <name>Threat Version</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.25461.2.1.2.1.9.0</snmp_oid>
@@ -356,7 +386,8 @@ Device serial number has changed. Ack to close</description>
                     <request_method>POST</request_method>
                     <triggers>
                         <trigger>
-                            <expression>{diff(0)}=1</expression>
+                            <uuid>efee5e6656414ba3b35ca6d1c686e03c</uuid>
+                            <expression>(last(/Template Palo Alto Firewall/panSysThreatVersion,#1)&lt;&gt;last(/Template Palo Alto Firewall/panSysThreatVersion,#2))=1</expression>
                             <name>Threat version has changed to {ITEM.VALUE}</name>
                             <priority>INFO</priority>
                             <manual_close>YES</manual_close>
@@ -364,6 +395,7 @@ Device serial number has changed. Ack to close</description>
                     </triggers>
                 </item>
                 <item>
+                    <uuid>4737b7ec368f4c97860c4c78f3b903c9</uuid>
                     <name>URL Filtering Version</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.25461.2.1.2.1.10.0</snmp_oid>
@@ -376,7 +408,8 @@ Device serial number has changed. Ack to close</description>
                     <request_method>POST</request_method>
                     <triggers>
                         <trigger>
-                            <expression>{diff(0)}=1</expression>
+                            <uuid>1bab31c0072f4c51999a71675fd370c9</uuid>
+                            <expression>(last(/Template Palo Alto Firewall/panSysUrlFilteringVersion,#1)&lt;&gt;last(/Template Palo Alto Firewall/panSysUrlFilteringVersion,#2))=1</expression>
                             <name>URL Filtering Version has changed to {ITEM.VALUE}</name>
                             <status>DISABLED</status>
                             <priority>INFO</priority>
@@ -385,6 +418,7 @@ Device serial number has changed. Ack to close</description>
                     </triggers>
                 </item>
                 <item>
+                    <uuid>7d4807bf69534f47aa0d702e919a3dba</uuid>
                     <name>System Description</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.2.1.1.1.0</snmp_oid>
@@ -398,6 +432,7 @@ Device serial number has changed. Ack to close</description>
                     <request_method>POST</request_method>
                 </item>
                 <item>
+                    <uuid>a1bb135924e84e7f8b679db16790e34f</uuid>
                     <name>System Name</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.2.1.1.5.0</snmp_oid>
@@ -411,7 +446,8 @@ Device serial number has changed. Ack to close</description>
                     <request_method>POST</request_method>
                     <triggers>
                         <trigger>
-                            <expression>{diff(0)}=1</expression>
+                            <uuid>e9f0b816900c4866a4dd36b57048a09b</uuid>
+                            <expression>(last(/Template Palo Alto Firewall/sysName,#1)&lt;&gt;last(/Template Palo Alto Firewall/sysName,#2))=1</expression>
                             <name>Hostname has changed to {ITEM.VALUE}</name>
                             <priority>INFO</priority>
                             <description>Device hostname on a PA firewall has been changed</description>
@@ -420,6 +456,7 @@ Device serial number has changed. Ack to close</description>
                     </triggers>
                 </item>
                 <item>
+                    <uuid>9248a0838ff74e40b751120996c24ea4</uuid>
                     <name>System Uptime</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.2.1.25.1.1.0</snmp_oid>
@@ -438,7 +475,8 @@ Device serial number has changed. Ack to close</description>
                     <request_method>POST</request_method>
                     <triggers>
                         <trigger>
-                            <expression>{change(0)}&lt;0</expression>
+                            <uuid>0411fb1410784a209dc9d217446ecd40</uuid>
+                            <expression>change(/Template Palo Alto Firewall/sysUpTime)&lt;0</expression>
                             <name>{HOST.HOST} has just been restarted</name>
                             <priority>AVERAGE</priority>
                             <manual_close>YES</manual_close>
@@ -446,6 +484,7 @@ Device serial number has changed. Ack to close</description>
                     </triggers>
                 </item>
                 <item>
+                    <uuid>28b730c6bf7240fd8cb711b1c02fce54</uuid>
                     <name>SNMP availability</name>
                     <type>INTERNAL</type>
                     <key>zabbix[host,snmp,available]</key>
@@ -460,6 +499,7 @@ Device serial number has changed. Ack to close</description>
             </items>
             <discovery_rules>
                 <discovery_rule>
+                    <uuid>8916021e8f9f415685f1e8b8e376ff2f</uuid>
                     <name>$1 Discovery</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>discovery[{#SNMPVALUE},1.3.6.1.2.1.47.1.1.1.1.2]</snmp_oid>
@@ -477,6 +517,7 @@ Device serial number has changed. Ack to close</description>
                     <description>A textual description of physical entity. This object should contain a string that identifies the manufacturer's name for the physical entity, and should be set to a distinct value for each version or model of the physical entity.</description>
                     <item_prototypes>
                         <item_prototype>
+                            <uuid>8431b19b8ea34bf99d989c71e5a7c32a</uuid>
                             <name>Operational status of $1</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>.1.3.6.1.2.1.99.1.1.1.5.{#SNMPINDEX}</snmp_oid>
@@ -485,7 +526,8 @@ Device serial number has changed. Ack to close</description>
                             <request_method>POST</request_method>
                             <trigger_prototypes>
                                 <trigger_prototype>
-                                    <expression>{last()}=3</expression>
+                                    <uuid>d16b7a342c824cbab29e21da46cc2ca1</uuid>
+                                    <expression>last(/Template Palo Alto Firewall/entPhySensorOperStatus[{#SNMPVALUE},FAN])=3</expression>
                                     <name>{#SNMPVALUE} is nonoperational</name>
                                     <priority>HIGH</priority>
                                     <description>Trigger for fan operational status</description>
@@ -493,6 +535,7 @@ Device serial number has changed. Ack to close</description>
                             </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
+                            <uuid>a140baed09ac4827a81d326c7359f215</uuid>
                             <name>{#SNMPVALUE}</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>.1.3.6.1.2.1.99.1.1.1.4.{#SNMPINDEX}</snmp_oid>
@@ -508,6 +551,7 @@ The most recent measurement obtained by the agent for this sensor.</description>
                     <request_method>POST</request_method>
                 </discovery_rule>
                 <discovery_rule>
+                    <uuid>b133aa1d7a854de38ad786767b5a4148</uuid>
                     <name>$1 Discovery</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>discovery[{#SNMPVALUE},1.3.6.1.2.1.47.1.1.1.1.2]</snmp_oid>
@@ -525,6 +569,7 @@ The most recent measurement obtained by the agent for this sensor.</description>
                     <description>A textual description of physical entity. This object should contain a string that identifies the manufacturer's name for the physical entity, and should be set to a distinct value for each version or model of the physical entity.</description>
                     <item_prototypes>
                         <item_prototype>
+                            <uuid>9fb1c5af3a2d42598d8eaf186ac24a69</uuid>
                             <name>Operational status of {#SNMPVALUE}</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>.1.3.6.1.2.1.99.1.1.1.5.{#SNMPINDEX}</snmp_oid>
@@ -534,6 +579,7 @@ The most recent measurement obtained by the agent for this sensor.</description>
                             <request_method>POST</request_method>
                         </item_prototype>
                         <item_prototype>
+                            <uuid>f3d1cc596b2d441496d501393eb358e9</uuid>
                             <name>{#SNMPVALUE}</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>.1.3.6.1.2.1.99.1.1.1.4.{#SNMPINDEX}</snmp_oid>
@@ -546,13 +592,15 @@ The most recent measurement obtained by the agent for this sensor.</description>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Template Palo Alto Firewall:entPhySensorValue[{#SNMPINDEX},TEMPERATURE].last()}&gt;50 and {Template Palo Alto Firewall:entPhySensorOperStatus[{#SNMPINDEX},TEMPERATURE].last()}=3</expression>
+                            <uuid>10fd5d3288684fb4a6b43bfc7a1b2094</uuid>
+                            <expression>last(/Template Palo Alto Firewall/entPhySensorValue[{#SNMPINDEX},TEMPERATURE])&gt;50 and last(/Template Palo Alto Firewall/entPhySensorOperStatus[{#SNMPINDEX},TEMPERATURE])=3</expression>
                             <name>{#SNMPVALUE} is {ITEM.VALUE1}</name>
                             <priority>WARNING</priority>
                         </trigger_prototype>
                     </trigger_prototypes>
                     <graph_prototypes>
                         <graph_prototype>
+                            <uuid>3e583ebb13c940da9a3acab9f61400af</uuid>
                             <name>Temperature: {#SNMPVALUE}</name>
                             <graph_items>
                                 <graph_item>
@@ -568,10 +616,45 @@ The most recent measurement obtained by the agent for this sensor.</description>
                     <request_method>POST</request_method>
                 </discovery_rule>
             </discovery_rules>
+            <valuemaps>
+                <valuemap>
+                    <uuid>671ec64bb00d4d38839b00dbe59db977</uuid>
+                    <name>Service state</name>
+                    <mappings>
+                        <mapping>
+                            <value>0</value>
+                            <newvalue>Down</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>1</value>
+                            <newvalue>Up</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+                <valuemap>
+                    <uuid>fa01da1fdd534ba19af8127ed2cea320</uuid>
+                    <name>zabbix.host.available</name>
+                    <mappings>
+                        <mapping>
+                            <value>0</value>
+                            <newvalue>not available</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>1</value>
+                            <newvalue>available</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>2</value>
+                            <newvalue>unknown</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+            </valuemaps>
         </template>
     </templates>
     <graphs>
         <graph>
+            <uuid>9ae35e2bb3af4b6084d2d484d82bdbbb</uuid>
             <name>CPU load graph</name>
             <graph_items>
                 <graph_item>
@@ -592,6 +675,7 @@ The most recent measurement obtained by the agent for this sensor.</description>
             </graph_items>
         </graph>
         <graph>
+            <uuid>c9dc1cdfeb4742e494b82e89b8f41e97</uuid>
             <name>Sessions load graph</name>
             <graph_items>
                 <graph_item>
@@ -613,36 +697,4 @@ The most recent measurement obtained by the agent for this sensor.</description>
             </graph_items>
         </graph>
     </graphs>
-    <value_maps>
-        <value_map>
-            <name>Service state</name>
-            <mappings>
-                <mapping>
-                    <value>0</value>
-                    <newvalue>Down</newvalue>
-                </mapping>
-                <mapping>
-                    <value>1</value>
-                    <newvalue>Up</newvalue>
-                </mapping>
-            </mappings>
-        </value_map>
-        <value_map>
-            <name>zabbix.host.available</name>
-            <mappings>
-                <mapping>
-                    <value>0</value>
-                    <newvalue>not available</newvalue>
-                </mapping>
-                <mapping>
-                    <value>1</value>
-                    <newvalue>available</newvalue>
-                </mapping>
-                <mapping>
-                    <value>2</value>
-                    <newvalue>unknown</newvalue>
-                </mapping>
-            </mappings>
-        </value_map>
-    </value_maps>
 </zabbix_export>

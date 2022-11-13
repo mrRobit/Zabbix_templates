@@ -26,7 +26,7 @@ Create a NGFW host and link this template to it.
 
 ## Template links
 
-Linked to Template Module Interfaces SNMPv2
+This template is NOT linked with "Template Module Interfaces SNMPv2". Please add it manually to your monitored host.
 
 ## Discovery rules
 

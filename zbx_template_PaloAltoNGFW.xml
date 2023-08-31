@@ -28,6 +28,7 @@
                     <history>30d</history>
                     <units>%</units>
                     <description>The average, over the last minute, of the percentage of time that this processor was not idle. Implementations may approximate this one minute smoothing period if necessary.</description>
+                    <request_method>POST</request_method>
                     <triggers>
                         <trigger>
                             <uuid>95a6bd8630fa456a9561750cbe1654e4</uuid>
@@ -46,6 +47,7 @@
                     <history>30d</history>
                     <units>%</units>
                     <description>The average, over the last minute, of the percentage of time that this processor was not idle. Implementations may approximate this one minute smoothing period if necessary.</description>
+                    <request_method>POST</request_method>
                     <triggers>
                         <trigger>
                             <uuid>0894b9b8b4854aa2ab27cd47ff9c553e</uuid>
@@ -73,6 +75,7 @@
                             </parameters>
                         </step>
                     </preprocessing>
+                    <request_method>POST</request_method>
                     <triggers>
                         <trigger>
                             <uuid>709b3fb1eef14529ab27b1f31107bc43</uuid>
@@ -94,6 +97,7 @@
                     <value_type>TEXT</value_type>
                     <description>Chassis type for this Palo Alto device.</description>
                     <inventory_link>MODEL</inventory_link>
+                    <request_method>POST</request_method>
                 </item>
                 <item>
                     <uuid>e2d110b53e054707838ad9217f2744e8</uuid>
@@ -142,6 +146,7 @@
                     <key>panSessionActive</key>
                     <history>30d</history>
                     <description>Total number of active sessions.</description>
+                    <request_method>POST</request_method>
                 </item>
                 <item>
                     <uuid>63f7cd5c863c4a9b9f6d2aaa30e43964</uuid>
@@ -180,6 +185,7 @@
                     <history>7d</history>
                     <trends>0</trends>
                     <description>Total number of sessions supported.</description>
+                    <request_method>POST</request_method>
                 </item>
                 <item>
                     <uuid>28a534703c6049d0abfa8622cabfac72</uuid>
@@ -224,6 +230,7 @@
                     <trends>0</trends>
                     <value_type>TEXT</value_type>
                     <description>Currently installed application definition version. If no application definition is found, 0 is returned.</description>
+                    <request_method>POST</request_method>
                     <triggers>
                         <trigger>
                             <uuid>394584e124f6433bb41cbbd867348144</uuid>
@@ -245,6 +252,7 @@
                     <trends>0</trends>
                     <value_type>TEXT</value_type>
                     <description>Currently installed global-protect client package version. If package is not installed, 0.0.0 is returned.</description>
+                    <request_method>POST</request_method>
                     <triggers>
                         <trigger>
                             <uuid>211061de1d274109820af7f1e27ab337</uuid>
@@ -266,6 +274,7 @@
                     <trends>0</trends>
                     <value_type>TEXT</value_type>
                     <description>Current high-availability mode (disabled, active-passive, or active-active).</description>
+                    <request_method>POST</request_method>
                 </item>
                 <item>
                     <uuid>fbeb733e9a224df8a65edd6a35e5a13d</uuid>
@@ -277,6 +286,7 @@
                     <trends>0</trends>
                     <value_type>TEXT</value_type>
                     <description>Current peer high-availability state.</description>
+                    <request_method>POST</request_method>
                 </item>
                 <item>
                     <uuid>69c101bad9d74bfc83d33e590e2e2dd2</uuid>
@@ -288,6 +298,7 @@
                     <trends>0</trends>
                     <value_type>TEXT</value_type>
                     <description>Current high-availability state.</description>
+                    <request_method>POST</request_method>
                     <triggers>
                         <trigger>
                             <uuid>937c5fe5976a42c6bfc06ce7add11211</uuid>
@@ -310,6 +321,7 @@
                     <value_type>TEXT</value_type>
                     <description>Hardware version of the unit.</description>
                     <inventory_link>HARDWARE</inventory_link>
+                    <request_method>POST</request_method>
                 </item>
                 <item>
                     <uuid>6ddb1ff37b0e4ff890ee4d4ee900ee0f</uuid>
@@ -323,6 +335,7 @@
                     <value_type>TEXT</value_type>
                     <description>The serial number of the unit. If not available, an empty string is returned.</description>
                     <inventory_link>SERIALNO_A</inventory_link>
+                    <request_method>POST</request_method>
                     <triggers>
                         <trigger>
                             <uuid>37187e18b830450ab673440df4e982c3</uuid>
@@ -347,6 +360,7 @@ Device serial number has changed. Ack to close</description>
                     <value_type>TEXT</value_type>
                     <description>Full software version. The first two components of the full version are the major and minor versions. The third component indicates the maintenance release number.</description>
                     <inventory_link>OS</inventory_link>
+                    <request_method>POST</request_method>
                     <triggers>
                         <trigger>
                             <uuid>1758114fdda2498b9c252ae8bc8b6cbb</uuid>
@@ -369,6 +383,7 @@ Device serial number has changed. Ack to close</description>
                     <trends>0</trends>
                     <value_type>TEXT</value_type>
                     <description>Currently installed threat definition version. If no threat definition is found, 0 is returned.</description>
+                    <request_method>POST</request_method>
                     <triggers>
                         <trigger>
                             <uuid>efee5e6656414ba3b35ca6d1c686e03c</uuid>
@@ -390,6 +405,7 @@ Device serial number has changed. Ack to close</description>
                     <trends>0</trends>
                     <value_type>TEXT</value_type>
                     <description>Currently installed URL filtering version. If no URL filtering is installed, 0 is returned.</description>
+                    <request_method>POST</request_method>
                     <triggers>
                         <trigger>
                             <uuid>1bab31c0072f4c51999a71675fd370c9</uuid>
@@ -413,6 +429,7 @@ Device serial number has changed. Ack to close</description>
                     <value_type>TEXT</value_type>
                     <description>A textual description of the entity.  This value should include the full name and version identification of the system's hardware type, software operating-system, and networking software.  It is mandatory that this only contain printable ASCII characters.</description>
                     <inventory_link>TYPE</inventory_link>
+                    <request_method>POST</request_method>
                 </item>
                 <item>
                     <uuid>a1bb135924e84e7f8b679db16790e34f</uuid>
@@ -426,6 +443,7 @@ Device serial number has changed. Ack to close</description>
                     <value_type>TEXT</value_type>
                     <description>An administratively-assigned name for this managed node.  By convention, this is the node's fully-qualified domain name.</description>
                     <inventory_link>NAME</inventory_link>
+                    <request_method>POST</request_method>
                     <triggers>
                         <trigger>
                             <uuid>e9f0b816900c4866a4dd36b57048a09b</uuid>
@@ -454,6 +472,7 @@ Device serial number has changed. Ack to close</description>
                             </parameters>
                         </step>
                     </preprocessing>
+                    <request_method>POST</request_method>
                     <triggers>
                         <trigger>
                             <uuid>0411fb1410784a209dc9d217446ecd40</uuid>
@@ -475,6 +494,7 @@ Device serial number has changed. Ack to close</description>
                     <valuemap>
                         <name>zabbix.host.available</name>
                     </valuemap>
+                    <request_method>POST</request_method>
                 </item>
             </items>
             <discovery_rules>
@@ -503,6 +523,7 @@ Device serial number has changed. Ack to close</description>
                             <snmp_oid>.1.3.6.1.2.1.99.1.1.1.5.{#SNMPINDEX}</snmp_oid>
                             <key>entPhySensorOperStatus[{#SNMPVALUE},FAN]</key>
                             <delay>300</delay>
+                            <request_method>POST</request_method>
                             <trigger_prototypes>
                                 <trigger_prototype>
                                     <uuid>d16b7a342c824cbab29e21da46cc2ca1</uuid>
@@ -524,8 +545,10 @@ Device serial number has changed. Ack to close</description>
                             <description>ENTITY-SENSOR-MIB::entPhySensorValue&amp;#13;
 &amp;#13;
 The most recent measurement obtained by the agent for this sensor.</description>
+                            <request_method>POST</request_method>
                         </item_prototype>
                     </item_prototypes>
+                    <request_method>POST</request_method>
                 </discovery_rule>
                 <discovery_rule>
                     <uuid>b133aa1d7a854de38ad786767b5a4148</uuid>
@@ -553,6 +576,7 @@ The most recent measurement obtained by the agent for this sensor.</description>
                             <key>entPhySensorOperStatus[{#SNMPINDEX},TEMPERATURE]</key>
                             <delay>300</delay>
                             <description>Discovery of alarm status at temperature sensor</description>
+                            <request_method>POST</request_method>
                         </item_prototype>
                         <item_prototype>
                             <uuid>f3d1cc596b2d441496d501393eb358e9</uuid>
@@ -563,6 +587,7 @@ The most recent measurement obtained by the agent for this sensor.</description>
                             <delay>60</delay>
                             <units>°C</units>
                             <description>Temperature item discovery</description>
+                            <request_method>POST</request_method>
                         </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
@@ -588,6 +613,7 @@ The most recent measurement obtained by the agent for this sensor.</description>
                             </graph_items>
                         </graph_prototype>
                     </graph_prototypes>
+                    <request_method>POST</request_method>
                 </discovery_rule>
             </discovery_rules>
             <valuemaps>

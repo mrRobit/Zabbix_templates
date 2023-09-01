@@ -2,7 +2,7 @@
 
 ## Overview
 
-The template to monitor Palo Alto Networks NGFW PAN-OS by Zabbix v.5.4 using SNMP v2c. For use with a different Zabbix version please choose corresponding branch.
+The template to monitor Palo Alto Networks NGFW PAN-OS by Zabbix v.6.4 using SNMP v2c. For use with a different Zabbix version please choose corresponding branch.
 
 TIP: to monitor firewalls interfaces, please add offcial zabbix template: [Template Module Interfaces SNMPv2](https://git.zabbix.com/projects/ZBX/repos/zabbix/browse/templates/module/interfaces_snmp?at=refs%2Fheads%2Frelease%2F5.0).
 

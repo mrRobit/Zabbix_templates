@@ -1,6 +1,6 @@
 {
     "zabbix_export": {
-        "version": "5.4",
+        "version": "6.4",
         "date": "2022-11-13T20:33:50Z",
         "groups": [
             {

@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.4</version>
+    <date>2022-11-13T20:33:42Z</date>
+    <groups>
+        <group>
+            <uuid>7df96b18c230490a9a0a9e2307226338</uuid>
+            <name>Templates</name>
+        </group>
+    </groups>
     <templates>
         <template>
             <uuid>b8c9c61f2aa9496084edea293b792b9f</uuid>
-            <template>Template Palo Alto Networks Firewall</template>
-            <name>Template Palo Alto Networks Firewall</name>
+            <template>Template Palo Alto Firewall</template>
+            <name>Template Palo Alto Firewall</name>
             <groups>
                 <group>
-                    <name>Templates/Network devices</name>
+                    <name>Templates</name>
                 </group>
             </groups>
             <items>
@@ -24,7 +31,7 @@
                     <triggers>
                         <trigger>
                             <uuid>95a6bd8630fa456a9561750cbe1654e4</uuid>
-                            <expression>min(/Template Palo Alto Networks Firewall/hrProcessorLoad1,15m)&gt;95</expression>
+                            <expression>min(/Template Palo Alto Firewall/hrProcessorLoad1,15m)&gt;95</expression>
                             <name>CPU utilization (MP) on {HOST.HOST} is over 95% for 15 min</name>
                             <priority>AVERAGE</priority>
                         </trigger>
@@ -42,7 +49,7 @@
                     <triggers>
                         <trigger>
                             <uuid>0894b9b8b4854aa2ab27cd47ff9c553e</uuid>
-                            <expression>min(/Template Palo Alto Networks Firewall/hrProcessorLoad2,15m)&gt;95</expression>
+                            <expression>min(/Template Palo Alto Firewall/hrProcessorLoad2,15m)&gt;95</expression>
                             <name>CPU utilization (DP) on {HOST.HOST} is over 95% for 15 min</name>
                             <priority>AVERAGE</priority>
                         </trigger>
@@ -69,7 +76,7 @@
                     <triggers>
                         <trigger>
                             <uuid>709b3fb1eef14529ab27b1f31107bc43</uuid>
-                            <expression>last(/Template Palo Alto Networks Firewall/icmpping[,2],#1)=0 and last(/Template Palo Alto Networks Firewall/icmpping[,2],#2)=0</expression>
+                            <expression>last(/Template Palo Alto Firewall/icmpping[,2],#1)=0 and last(/Template Palo Alto Firewall/icmpping[,2],#2)=0</expression>
                             <name>{HOST.HOST} is down!</name>
                             <priority>HIGH</priority>
                         </trigger>
@@ -120,7 +127,7 @@
                     <triggers>
                         <trigger>
                             <uuid>da544f9bc3a848aba438047dde8fe21d</uuid>
-                            <expression>min(/Template Palo Alto Networks Firewall/panGPGWUtilizationPct,15m)&gt;95</expression>
+                            <expression>min(/Template Palo Alto Firewall/panGPGWUtilizationPct,15m)&gt;95</expression>
                             <name>High GlobalProtect utilization (&gt;95%) for 15m</name>
                             <priority>AVERAGE</priority>
                             <description>Hitting GP limits for 15  minutes</description>
@@ -186,7 +193,7 @@
                     <triggers>
                         <trigger>
                             <uuid>1c55fd38643b4a40a890806903974e22</uuid>
-                            <expression>min(/Template Palo Alto Networks Firewall/panSessionUtilization,15m)&gt;90</expression>
+                            <expression>min(/Template Palo Alto Firewall/panSessionUtilization,15m)&gt;90</expression>
                             <name>High session table utilization (&gt;90%) for 15m</name>
                             <priority>HIGH</priority>
                             <description>Reaching session table capacity</description>
@@ -220,7 +227,7 @@
                     <triggers>
                         <trigger>
                             <uuid>394584e124f6433bb41cbbd867348144</uuid>
-                            <expression>(last(/Template Palo Alto Networks Firewall/panSysAppVersion,#1)&lt;&gt;last(/Template Palo Alto Networks Firewall/panSysAppVersion,#2))=1</expression>
+                            <expression>(last(/Template Palo Alto Firewall/panSysAppVersion,#1)&lt;&gt;last(/Template Palo Alto Firewall/panSysAppVersion,#2))=1</expression>
                             <name>App-ID version has changed to {ITEM.VALUE1}</name>
                             <priority>INFO</priority>
                             <manual_close>YES</manual_close>
@@ -241,7 +248,7 @@
                     <triggers>
                         <trigger>
                             <uuid>211061de1d274109820af7f1e27ab337</uuid>
-                            <expression>(last(/Template Palo Alto Networks Firewall/panSysGlobalProtectClientVersion,#1)&lt;&gt;last(/Template Palo Alto Networks Firewall/panSysGlobalProtectClientVersion,#2))=1</expression>
+                            <expression>(last(/Template Palo Alto Firewall/panSysGlobalProtectClientVersion,#1)&lt;&gt;last(/Template Palo Alto Firewall/panSysGlobalProtectClientVersion,#2))=1</expression>
                             <name>Global Protect Client Version has changed to {ITEM.VALUE}</name>
                             <priority>INFO</priority>
                             <manual_close>YES</manual_close>
@@ -284,7 +291,7 @@
                     <triggers>
                         <trigger>
                             <uuid>937c5fe5976a42c6bfc06ce7add11211</uuid>
-                            <expression>(last(/Template Palo Alto Networks Firewall/panSysHAState,#1)&lt;&gt;last(/Template Palo Alto Networks Firewall/panSysHAState,#2))=1</expression>
+                            <expression>(last(/Template Palo Alto Firewall/panSysHAState,#1)&lt;&gt;last(/Template Palo Alto Firewall/panSysHAState,#2))=1</expression>
                             <name>{HOST.HOST} switched to {ITEM.VALUE} state in HA cluster</name>
                             <priority>AVERAGE</priority>
                             <manual_close>YES</manual_close>
@@ -319,7 +326,7 @@
                     <triggers>
                         <trigger>
                             <uuid>37187e18b830450ab673440df4e982c3</uuid>
-                            <expression>(last(/Template Palo Alto Networks Firewall/panSysSerialNumber,#1)&lt;&gt;last(/Template Palo Alto Networks Firewall/panSysSerialNumber,#2))=1 and length(last(/Template Palo Alto Networks Firewall/panSysSerialNumber))&gt;0</expression>
+                            <expression>(last(/Template Palo Alto Firewall/panSysSerialNumber,#1)&lt;&gt;last(/Template Palo Alto Firewall/panSysSerialNumber,#2))=1 and length(last(/Template Palo Alto Firewall/panSysSerialNumber))&gt;0</expression>
                             <name>Device has been replaced (new serial number received)</name>
                             <priority>INFO</priority>
                             <description>Last value: {ITEM.LASTVALUE1}.
@@ -343,7 +350,7 @@ Device serial number has changed. Ack to close</description>
                     <triggers>
                         <trigger>
                             <uuid>1758114fdda2498b9c252ae8bc8b6cbb</uuid>
-                            <expression>(last(/Template Palo Alto Networks Firewall/panSysSwVersion,#1)&lt;&gt;last(/Template Palo Alto Networks Firewall/panSysSwVersion,#2))=1</expression>
+                            <expression>(last(/Template Palo Alto Firewall/panSysSwVersion,#1)&lt;&gt;last(/Template Palo Alto Firewall/panSysSwVersion,#2))=1</expression>
                             <name>PAN-OS version has changed to {ITEM.VALUE}</name>
                             <priority>INFO</priority>
                             <description>Operating system on a PA firewall has been upgraded or downgraded</description>
@@ -365,7 +372,7 @@ Device serial number has changed. Ack to close</description>
                     <triggers>
                         <trigger>
                             <uuid>efee5e6656414ba3b35ca6d1c686e03c</uuid>
-                            <expression>(last(/Template Palo Alto Networks Firewall/panSysThreatVersion,#1)&lt;&gt;last(/Template Palo Alto Networks Firewall/panSysThreatVersion,#2))=1</expression>
+                            <expression>(last(/Template Palo Alto Firewall/panSysThreatVersion,#1)&lt;&gt;last(/Template Palo Alto Firewall/panSysThreatVersion,#2))=1</expression>
                             <name>Threat version has changed to {ITEM.VALUE}</name>
                             <priority>INFO</priority>
                             <manual_close>YES</manual_close>
@@ -386,7 +393,7 @@ Device serial number has changed. Ack to close</description>
                     <triggers>
                         <trigger>
                             <uuid>1bab31c0072f4c51999a71675fd370c9</uuid>
-                            <expression>(last(/Template Palo Alto Networks Firewall/panSysUrlFilteringVersion,#1)&lt;&gt;last(/Template Palo Alto Networks Firewall/panSysUrlFilteringVersion,#2))=1</expression>
+                            <expression>(last(/Template Palo Alto Firewall/panSysUrlFilteringVersion,#1)&lt;&gt;last(/Template Palo Alto Firewall/panSysUrlFilteringVersion,#2))=1</expression>
                             <name>URL Filtering Version has changed to {ITEM.VALUE}</name>
                             <status>DISABLED</status>
                             <priority>INFO</priority>
@@ -422,7 +429,7 @@ Device serial number has changed. Ack to close</description>
                     <triggers>
                         <trigger>
                             <uuid>e9f0b816900c4866a4dd36b57048a09b</uuid>
-                            <expression>(last(/Template Palo Alto Networks Firewall/sysName,#1)&lt;&gt;last(/Template Palo Alto Networks Firewall/sysName,#2))=1</expression>
+                            <expression>(last(/Template Palo Alto Firewall/sysName,#1)&lt;&gt;last(/Template Palo Alto Firewall/sysName,#2))=1</expression>
                             <name>Hostname has changed to {ITEM.VALUE}</name>
                             <priority>INFO</priority>
                             <description>Device hostname on a PA firewall has been changed</description>
@@ -450,7 +457,7 @@ Device serial number has changed. Ack to close</description>
                     <triggers>
                         <trigger>
                             <uuid>0411fb1410784a209dc9d217446ecd40</uuid>
-                            <expression>change(/Template Palo Alto Networks Firewall/sysUpTime)&lt;0</expression>
+                            <expression>change(/Template Palo Alto Firewall/sysUpTime)&lt;0</expression>
                             <name>{HOST.HOST} has just been restarted</name>
                             <priority>AVERAGE</priority>
                             <manual_close>YES</manual_close>
@@ -499,7 +506,7 @@ Device serial number has changed. Ack to close</description>
                             <trigger_prototypes>
                                 <trigger_prototype>
                                     <uuid>d16b7a342c824cbab29e21da46cc2ca1</uuid>
-                                    <expression>last(/Template Palo Alto Networks Firewall/entPhySensorOperStatus[{#SNMPVALUE},FAN])=3</expression>
+                                    <expression>last(/Template Palo Alto Firewall/entPhySensorOperStatus[{#SNMPVALUE},FAN])=3</expression>
                                     <name>{#SNMPVALUE} is nonoperational</name>
                                     <priority>HIGH</priority>
                                     <description>Trigger for fan operational status</description>
@@ -561,7 +568,7 @@ The most recent measurement obtained by the agent for this sensor.</description>
                     <trigger_prototypes>
                         <trigger_prototype>
                             <uuid>10fd5d3288684fb4a6b43bfc7a1b2094</uuid>
-                            <expression>last(/Template Palo Alto Networks Firewall/entPhySensorValue[{#SNMPINDEX},TEMPERATURE])&gt;50 and last(/Template Palo Alto Networks Firewall/entPhySensorOperStatus[{#SNMPINDEX},TEMPERATURE])=3</expression>
+                            <expression>last(/Template Palo Alto Firewall/entPhySensorValue[{#SNMPINDEX},TEMPERATURE])&gt;50 and last(/Template Palo Alto Firewall/entPhySensorOperStatus[{#SNMPINDEX},TEMPERATURE])=3</expression>
                             <name>{#SNMPVALUE} is {ITEM.VALUE1}</name>
                             <priority>WARNING</priority>
                         </trigger_prototype>
@@ -574,7 +581,7 @@ The most recent measurement obtained by the agent for this sensor.</description>
                                 <graph_item>
                                     <color>1A7C11</color>
                                     <item>
-                                        <host>Template Palo Alto Networks Firewall</host>
+                                        <host>Template Palo Alto Firewall</host>
                                         <key>entPhySensorValue[{#SNMPINDEX},TEMPERATURE]</key>
                                     </item>
                                 </graph_item>
@@ -627,7 +634,7 @@ The most recent measurement obtained by the agent for this sensor.</description>
                 <graph_item>
                     <color>1A7C11</color>
                     <item>
-                        <host>Template Palo Alto Networks Firewall</host>
+                        <host>Template Palo Alto Firewall</host>
                         <key>hrProcessorLoad1</key>
                     </item>
                 </graph_item>
@@ -635,7 +642,7 @@ The most recent measurement obtained by the agent for this sensor.</description>
                     <sortorder>1</sortorder>
                     <color>F63100</color>
                     <item>
-                        <host>Template Palo Alto Networks Firewall</host>
+                        <host>Template Palo Alto Firewall</host>
                         <key>hrProcessorLoad2</key>
                     </item>
                 </graph_item>
@@ -648,7 +655,7 @@ The most recent measurement obtained by the agent for this sensor.</description>
                 <graph_item>
                     <color>1A7C11</color>
                     <item>
-                        <host>Template Palo Alto Networks Firewall</host>
+                        <host>Template Palo Alto Firewall</host>
                         <key>panSessionActive</key>
                     </item>
                 </graph_item>
@@ -657,7 +664,7 @@ The most recent measurement obtained by the agent for this sensor.</description>
                     <drawtype>DASHED_LINE</drawtype>
                     <color>F63100</color>
                     <item>
-                        <host>Template Palo Alto Networks Firewall</host>
+                        <host>Template Palo Alto Firewall</host>
                         <key>panSessionMax</key>
                     </item>
                 </graph_item>
